@@ -41,7 +41,7 @@ const promptQuestions = questions => {
     {
         type: 'input',
         name: 'contribution',
-        message: 'what is the contribution guidemlines for your project?'
+        message: 'what is the contribution guidelines for your project?'
     },
     {
         type: 'input',
@@ -64,4 +64,6 @@ fs.writeToFile('./output.README.md', data) {}
 function init() {}
 
 // Function call to initialize app
-promptQuestions();
+promptUser()
+    .then(promptQuestions)
+    .then();
