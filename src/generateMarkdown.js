@@ -1,5 +1,5 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//function that returns a license badge based on which license is passed in
+//If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (!license) {
     return '';
@@ -33,7 +33,7 @@ function renderLicenseBadge(license) {
   };
 };
 
-// TODO: Create a function that returns the license section of README
+//function that returns the license section of README
 // If there is no license, return an empty string
 var licenseText
 const renderLicenseSection = license => {
@@ -69,7 +69,7 @@ const renderLicenseSection = license => {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+//function to generate markdown for README and return markdown
 module.exports = data => {
   return `
   

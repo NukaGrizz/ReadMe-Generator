@@ -1,8 +1,9 @@
+//Required moduales
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./src/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+// Function using inquirer to prompt an array of questions for user input
 const promptQuestions = questionsData => {
     
     return inquirer.prompt([
@@ -55,7 +56,7 @@ const promptQuestions = questionsData => {
     ]);
 };
 
-// TODO: Create a function to write README file
+//Function to write README file to dist folder
 const writeReadme = readmeMarkdown => {
     return new Promise((resolve, reject) => {
         fs.writeFile('./dist/.README.md', readmeMarkdown, err => {
@@ -72,15 +73,19 @@ const writeReadme = readmeMarkdown => {
     });
 };
 
-// Function call to initialize app
+// Function set to init and run app
+// Function to prompt user questions
 promptQuestions()
+    //Function to create markdown
     .then(readmeData => {
         return generateMarkdown(readmeData);
     })
+    //Function to write markdown to file
     .then(pagemarkdown => {
         console.log(pagemarkdown);
         return writeReadme(pagemarkdown);
     })
+    //Function to catch err if they occur
     .catch(err => {
         console.log(err);
       });
