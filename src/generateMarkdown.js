@@ -1,8 +1,11 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {
+//function renderLicenseBadge(license) {
+ // if (!license) {
+ //   return '';
+//  } else {}
 
-}
+///}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -13,7 +16,7 @@ const renderLicenseSection = license => {
   } else {
     switch(license) {
       case 'MIT License':
-        licenseText = "Licensed under the MIT License"
+        licenseText = "Licensed under the [MIT License](https://choosealicense.com/licenses/mit/)"
         return licenseText;
       case 'Mozilla Public License 2.0':
         licenseText = "Licensed under the [Mozilla Public License 2.0 License](https://choosealicense.com/licenses/mpl-2.0/)"
@@ -41,12 +44,12 @@ const renderLicenseSection = license => {
 }
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
+module.exports = data => {
   return `
   
   # ${data.title}
 
-  ${licenseBadge}
+  ${renderlicenseBadge(data.license)}
   
   ## Description 
 
@@ -88,8 +91,4 @@ function generateMarkdown(data) {
   Email: ${data.email}
   
 `;
-}
-
-module.exports = generateMarkdown => {
-
 };

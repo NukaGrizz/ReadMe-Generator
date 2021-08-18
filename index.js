@@ -1,13 +1,11 @@
 const fs = require('fs');
-const path = require('path');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./src/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const promptQuestions = questions => {
+const promptQuestions = questionsData => {
     
-    return inquirer
-        .prompt([
+    return inquirer.prompt([
     {
         type: 'input',
         name: 'github',
@@ -54,16 +52,39 @@ const promptQuestions = questions => {
         message: 'What license are you using for this project',
         choices: ['MIT License', 'Mozilla Public License 2.0', 'Apache License 2.0', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Boost Software License 1.0', 'The Unlicense']
     }
-]);
+    ]);
 };
 
 // TODO: Create a function to write README file
-fs.writeToFile('./output.README.md', data) {}
+const writeReadme = readmeMarkdown => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/.README.md', readmeMarkdown, err => {
+            if(err) {
+                reject(err);
+                return;
+            }
 
-// TODO: Create a function to initialize app
-function init() {}
+            resolve({
+                ok:true,
+                message: 'File created!'
+            });
+        });
+    });
+};
 
 // Function call to initialize app
-promptUser()
-    .then(promptQuestions)
-    .then();
+promptQuestions()
+    .then(readmeData => {
+        return generateMarkdown(readmeData);
+    })
+    .then(pagemarkdown => {
+        console.log(pagemarkdown);
+        return writeReadme(pagemarkdown);
+    })
+    .catch(err => {
+        console.log(err);
+      });
+    
+
+    
+
