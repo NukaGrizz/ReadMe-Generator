@@ -24,12 +24,12 @@ const promptQuestions = questionsData => {
     {
         type: 'input',
         name: 'discription',
-        message: 'Input a discription for your project'
+        message: 'Input a discription for your project.'
     },
     { 
         type: 'input',
         name: 'installation',
-        message: 'input installation instructions for your project'
+        message: 'Input installation instructions for your project.'
     },
     {
         type: 'input',
@@ -39,7 +39,7 @@ const promptQuestions = questionsData => {
     {
         type: 'input',
         name: 'contribution',
-        message: 'what is the contribution guidelines for your project?'
+        message: 'What is the contribution guidelines for your project?'
     },
     {
         type: 'input',

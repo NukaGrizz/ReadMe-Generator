@@ -113,7 +113,7 @@ module.exports = data => {
   ## Questions
 
   For questions please reachout
-  GitHub: ${data.github}
+  GitHub: [${data.github}](https://github.com/${data.github})
   Email: ${data.email}
   
 `;
