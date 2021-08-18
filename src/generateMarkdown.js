@@ -85,8 +85,10 @@ module.exports = data => {
   
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Credits](#credits)
+  * [Contributing](#Contributing)
   * [License](#license)
+  * [Tests](#tests)
+  * [Questions](#questions)
   
   ## Installation
   
@@ -113,8 +115,9 @@ module.exports = data => {
   ## Questions
 
   For questions please reachout
+
   GitHub: [${data.github}](https://github.com/${data.github})
+
   Email: ${data.email}
-  
 `;
 };
